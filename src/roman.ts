@@ -25,21 +25,18 @@ export const toRoman = (num: number): string => {
 }
 
 export const fromRoman = (rNum: string): number => {
-  const map: Record<string, number> = {
+  const values: Record<string, number> = {
     I: 1,
-    II: 2,
-    III: 3,
-    IV: 4,
     V: 5,
-    VI: 6,
-    VII: 7,
     X: 10,
-    XI: 11,
-    XIV: 14,
-    XIX: 19,
-    XL: 40,
     L: 50,
   };
+
+  let total = 0;
   
-  return map[rNum] ?? 0
+  for (const char of rNum) {
+    total += values[char];
+  }
+  
+  return total;
 };
