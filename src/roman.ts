@@ -4,6 +4,8 @@ export const toRoman = (num: number): string => {
     result = "I";
   } else if (num === 2) {
     result = "II";
+  } else if (num ===3) {
+    result = "III";
   }
   return result;
 }
