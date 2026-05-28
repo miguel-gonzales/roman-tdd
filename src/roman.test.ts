@@ -139,4 +139,8 @@ describe("fromRoman", () => {
   it("converts roman number XIV to number 14", () => {
     expect(fromRoman("XIV")).toBe(14)
   });
+
+  it("converts roman number XIX to number 19", () => {
+    expect(fromRoman("XIX")).toBe(19)
+  });
 });
