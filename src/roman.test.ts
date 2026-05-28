@@ -127,4 +127,8 @@ describe("fromRoman", () => {
   it("converts roman number VII to number 7", () => {
     expect(fromRoman("VII")).toBe(7)
   });
+
+  it("converts roman number X to number 10", () => {
+    expect(fromRoman("X")).toBe(10)
+  });
 });

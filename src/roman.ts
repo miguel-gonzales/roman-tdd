@@ -35,6 +35,7 @@ export const fromRoman = (rNum: string): number => {
     V: 5,
     VI: 6,
     VII: 7,
+    X: 10,
   };
   
   return map[rNum] ?? 0
