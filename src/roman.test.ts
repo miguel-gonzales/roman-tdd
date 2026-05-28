@@ -24,10 +24,20 @@ describe("toRoman", () => {
   it("should convert number 6 to roman number VI", () => {
     expect(toRoman(6)).toBe("VI")
   });
+
   it("should convert number 7 to roman number VII", () => {
     expect(toRoman(7)).toBe("VII")
   });
+
   it("should convert number 8 to roman number VIII", () => {
     expect(toRoman(8)).toBe("VIII")
+  });
+
+  it("should convert number 9 to roman number IX", () => {
+    expect(toRoman(9)).toBe("IX")
+  });
+
+  it("should convert number 10 to roman number X", () => {
+    expect(toRoman(10)).toBe("X")
   });
 });
