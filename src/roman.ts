@@ -27,14 +27,12 @@ export const toRoman = (num: number): string => {
 }
 
 export const fromRoman = (rNum: string): number => {
-  if (rNum === 'I') {
-    return 1 
-  } else if (rNum === 'II') {
-    return 2
-  } else if (rNum === 'III') {
-    return 3
-  } else if (rNum === 'IV') {
-    return 4
-  }
-  return 0
+  const map: Record<string, number> = {
+    I: 1,
+    II: 2,
+    III: 3,
+    IV: 4,
+  };
+  
+  return map[rNum] ?? 0
 };
