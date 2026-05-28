@@ -1,4 +1,5 @@
 import { toRoman } from "./roman.js"
+import { fromRoman } from "./roman.js"
 
 describe("toRoman", () => {
   it("should convert number 1 to roman number I", () => {
@@ -95,5 +96,11 @@ describe("toRoman", () => {
   
   it('converts 3999 to "MMMCMXCIX"', () => {
     expect(toRoman(3999)).toBe('MMMCMXCIX');
+  });
+});
+
+describe("fromRoman", () => {
+  it("converts roman number I to number 1", () => {
+    expect(fromRoman("I")).toBe(1)
   });
 });
