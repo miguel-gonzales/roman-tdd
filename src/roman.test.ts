@@ -115,4 +115,16 @@ describe("fromRoman", () => {
   it("converts roman number IV to number 4", () => {
     expect(fromRoman("IV")).toBe(4)
   });
+
+  it("converts roman number V to number 5", () => {
+    expect(fromRoman("V")).toBe(5)
+  });
+
+  it("converts roman number VI to number 6", () => {
+    expect(fromRoman("VI")).toBe(6)
+  });
+
+  it("converts roman number VII to number 7", () => {
+    expect(fromRoman("VII")).toBe(7)
+  });
 });
