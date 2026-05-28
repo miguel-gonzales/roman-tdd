@@ -25,3 +25,7 @@ export const toRoman = (num: number): string => {
   }
   return result;
 }
+
+export const fromRoman = (rNum: string): number => {
+  return 1 
+}
