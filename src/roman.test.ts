@@ -9,7 +9,11 @@ describe("toRoman", () => {
     expect(toRoman(2)).toBe("II")
   });
 
-  it("should convert number3 to roman number III", () => {
+  it("should convert number 3 to roman number III", () => {
     expect(toRoman(3)).toBe("III")
-  })
+  });
+
+  it("should convert number 4 to roman number IV", () => {
+    expect(toRoman(4)).toBe("IV")
+  });
 });

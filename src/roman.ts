@@ -1,12 +1,13 @@
 export const toRoman = (num: number): string => {
   const map: [number, string][] = [
+    [4, "IV"],
     [3, "III"],
     [2, "II"],
     [1, "I"]
   ];
   let result = "";
   for (const [value, numeral] of map) {
-    if (num >= value) {
+    while (num >= value) {
       result += numeral;
       num -= value;
     }
