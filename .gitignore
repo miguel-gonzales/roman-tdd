@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Vitest / Testing
+coverage/
+*.lcov
+
+# TypeScript
+dist/
+lib/
+*.tsbuildinfo
+
+# Debugging & Logs
+npm-debug.log*
+
+# Environment / Secrets
+.env
+# OS Metadata
+.DS_Store
+Thumbs.db
+
+# IDE Settings
+.vscode/
