@@ -40,4 +40,60 @@ describe("toRoman", () => {
   it("should convert number 10 to roman number X", () => {
     expect(toRoman(10)).toBe("X")
   });
+
+  it("should convert number 11 to roman number XI", () => {
+    expect(toRoman(11)).toBe("XI")
+  });
+
+  it("should convert number 14 to roman number XIV", () => {
+    expect(toRoman(14)).toBe("XIV")
+  });
+
+  it("should convert number 19 to roman number XIX", () => {
+    expect(toRoman(19)).toBe("XIX")
+  });
+
+  it("should convert number 40 to roman number XL", () => {
+    expect(toRoman(40)).toBe("XL")
+  });
+
+  it("should convert number 50 to roman number L", () => {
+    expect(toRoman(50)).toBe("L")
+  });
+
+  it("should convert number 90 to roman number XC", () => {
+    expect(toRoman(90)).toBe("XC")
+  });
+
+  it("should convert number 100 to roman number C", () => {
+    expect(toRoman(100)).toBe("C")
+  });
+
+  it("should convert number 400 to roman number CD", () => {
+    expect(toRoman(400)).toBe("CD")
+  });
+
+  it("should convert number 500 to roman number D", () => {
+    expect(toRoman(500)).toBe("D")
+  });
+
+  it("should convert number 900 to roman number CM", () => {
+    expect(toRoman(900)).toBe("CM")
+  });
+
+  it("should convert number 1000 to roman number M", () => {
+    expect(toRoman(1000)).toBe("M")
+  });
+
+  it('converts 1987 to "MCMLXXXVII"', () => {
+    expect(toRoman(1987)).toBe('MCMLXXXVII');
+  });
+
+  it('converts 3000 to "MMM"', () => {
+    expect(toRoman(3000)).toBe('MMM');
+  });
+  
+  it('converts 3999 to "MMMCMXCIX"', () => {
+    expect(toRoman(3999)).toBe('MMMCMXCIX');
+  });
 });
