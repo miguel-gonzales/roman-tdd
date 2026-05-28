@@ -103,4 +103,16 @@ describe("fromRoman", () => {
   it("converts roman number I to number 1", () => {
     expect(fromRoman("I")).toBe(1)
   });
+
+  it("converts roman number II to number 2", () => {
+    expect(fromRoman("II")).toBe(2  )
+  });
+
+  it("converts roman number III to number 3", () => {
+    expect(fromRoman("III")).toBe(3)
+  });
+
+  it("converts roman number IV to number 4", () => {
+    expect(fromRoman("IV")).toBe(4)
+  });
 });

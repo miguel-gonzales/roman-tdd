@@ -27,5 +27,14 @@ export const toRoman = (num: number): string => {
 }
 
 export const fromRoman = (rNum: string): number => {
-  return 1 
-}
+  if (rNum === 'I') {
+    return 1 
+  } else if (rNum === 'II') {
+    return 2
+  } else if (rNum === 'III') {
+    return 3
+  } else if (rNum === 'IV') {
+    return 4
+  }
+  return 0
+};
