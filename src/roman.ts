@@ -1,5 +1,5 @@
 export const toRoman = (num: number): string => {
-  const map: [number, string][] = [
+  const romanNumbers: [number, string][] = [
     [1000, "M"],
     [900, 'CM'],
     [500, "D"],
@@ -12,12 +12,10 @@ export const toRoman = (num: number): string => {
     [9, "IX"],
     [5, "V"],
     [4, "IV"],
-    [3, "III"],
-    [2, "II"],
     [1, "I"]
   ];
   let result = "";
-  for (const [value, numeral] of map) {
+  for (const [value, numeral] of romanNumbers) {
     while (num >= value) {
       result += numeral;
       num -= value;
