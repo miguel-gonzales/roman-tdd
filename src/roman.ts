@@ -60,6 +60,10 @@ export const fromRoman = (rNum: string): number => {
     throw new Error("Input contains invalid characters, please provide a valid Roman numeral string");
   }
 
+  if (/I{4,}|X{4,}|C{4,}|M{4,}/.test(rNum)) {
+    throw new Error("Invalid Roman numeral: too many repetitions");
+  }
+
   let total = 0;
 
   for (let i = 0; i < rNum.length; i++) {

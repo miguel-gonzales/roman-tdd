@@ -105,4 +105,20 @@ describe("fromRoman", () => {
   it("should throw an error for invalid characters", () => {
     expect(() => fromRoman("ABC")).toThrow()
   });
+
+  it("should throw an error for too many repetitions of I (IIII)", () => {
+    expect(() => fromRoman("IIII")).toThrow()
+  });
+
+  it("should throw an error for too many repetitions of X (XXXX)", () => {
+    expect(() => fromRoman("XXXX")).toThrow()
+  });
+
+  it("should throw an error for too many repetitions of C (CCCC)", () => {
+    expect(() => fromRoman("CCCC")).toThrow()
+  });
+
+  it("should throw an error for too many repetitions of M (MMMM)", () => {
+    expect(() => fromRoman("MMMM")).toThrow()
+  });
 });
