@@ -14,6 +14,11 @@ export const toRoman = (num: number): string => {
     [4, "IV"],
     [1, "I"]
   ];
+
+  if (num <= 0 || num >= 4000) {
+    throw new Error("Input must be between 1 and 3999");
+  }
+  
   let result = "";
   for (const [value, numeral] of romanNumbers) {
     while (num >= value) {
