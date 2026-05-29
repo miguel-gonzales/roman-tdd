@@ -101,4 +101,8 @@ describe("fromRoman", () => {
   it("should throw an error for mixed case input", () => {
     expect(() => fromRoman("Iv")).toThrow()
   });
+
+  it("should throw an error for invalid characters", () => {
+    expect(() => fromRoman("ABC")).toThrow()
+  });
 });

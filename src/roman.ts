@@ -56,6 +56,10 @@ export const fromRoman = (rNum: string): number => {
     throw new Error("Input must contain only uppercase letters, please provide a valid Roman numeral string");
   }
 
+  if (rNum.split("").some(char => !values[char])) {
+    throw new Error("Input contains invalid characters, please provide a valid Roman numeral string");
+  }
+
   let total = 0;
 
   for (let i = 0; i < rNum.length; i++) {
