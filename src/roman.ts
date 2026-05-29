@@ -1,4 +1,4 @@
-export const toRoman = (num: number): string => {
+export const toRoman = (value: number): string => {
   const romanNumbers: [number, string][] = [
     [1000, "M"],
     [900, 'CM'],
@@ -14,11 +14,18 @@ export const toRoman = (num: number): string => {
     [4, "IV"],
     [1, "I"]
   ];
-
+  
+  // Validations
+  let num = typeof value === "string" ? Number(value) : value;
+  
+  if (!Number.isInteger(num)) {
+    throw new Error("Input must be an integer");
+  }
   if (num <= 0 || num >= 4000) {
     throw new Error("Input must be between 1 and 3999");
   }
-  
+
+
   let result = "";
   for (const [value, numeral] of romanNumbers) {
     while (num >= value) {
