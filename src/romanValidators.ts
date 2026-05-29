@@ -1,12 +1,4 @@
-export const ROMAN_VALUES: Record<string, number> = {
-  I: 1,
-  V: 5,
-  X: 10,
-  L: 50,
-  C: 100,
-  D: 500,
-  M: 1000,
-};
+import { ROMAN_VALUES } from "./romanConstants.js";
 
 export function assertValidToRomanInput(value: number): number {
   const num = typeof value === "string" ? Number(value) : value;
