@@ -47,6 +47,10 @@ export const fromRoman = (rNum: string): number => {
     M: 1000
   };
 
+  if (rNum.length === 0) {
+    throw new Error("Input cannot be empty, please provide a valid Roman numeral string");
+  }
+
   let total = 0;
 
   for (let i = 0; i < rNum.length; i++) {
