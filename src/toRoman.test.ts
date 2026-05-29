@@ -105,4 +105,8 @@ describe("toRoman", () => {
   it("should throw an error when input exceeds 3999", () => {
     expect(() => toRoman(4000)).toThrow()
   });
+
+  it("should throw an error when input is negative", () => {
+    expect(() => toRoman(-1)).toThrow()
+  });
 });
