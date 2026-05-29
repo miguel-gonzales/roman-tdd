@@ -30,12 +30,23 @@ export const fromRoman = (rNum: string): number => {
     V: 5,
     X: 10,
     L: 50,
+    C: 100,
+    D: 500,
+    M: 1000
   };
 
   let total = 0;
-  
-  for (const char of rNum) {
-    total += values[char];
+
+  for (let i = 0; i < rNum.length; i++) {
+    const current = values[rNum[i]];
+    const next = values[rNum[i + 1]]; // Minimal code without checking for undefined.
+
+    if (next !== undefined && current < next) {
+      total += next - current;
+      i++;
+    } else {
+      total += current;
+    }
   }
   
   return total;
