@@ -47,8 +47,13 @@ export const fromRoman = (rNum: string): number => {
     M: 1000
   };
 
+  // Validations
   if (rNum.length === 0) {
     throw new Error("Input cannot be empty, please provide a valid Roman numeral string");
+  }
+
+  if (rNum !== rNum.toUpperCase()) {
+    throw new Error("Input must contain only uppercase letters, please provide a valid Roman numeral string");
   }
 
   let total = 0;

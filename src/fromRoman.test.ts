@@ -93,4 +93,12 @@ describe("fromRoman", () => {
   it("should throw an error for an empty string", () => {
     expect(() => fromRoman("")).toThrow()
   });
+
+  it("should throw an error for lowercase input", () => {
+    expect(() => fromRoman("iv")).toThrow()
+  });
+
+  it("should throw an error for mixed case input", () => {
+    expect(() => fromRoman("Iv")).toThrow()
+  });
 });
