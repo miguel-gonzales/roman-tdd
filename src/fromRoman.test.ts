@@ -88,4 +88,9 @@ describe("fromRoman", () => {
   it("converts roman number MMMCMXCIX to number 3999", () => {
     expect(fromRoman("MMMCMXCIX")).toBe(3999)
   });
+
+  // Edge cases
+  it("should throw an error for an empty string", () => {
+    expect(() => fromRoman("")).toThrow()
+  });
 });
