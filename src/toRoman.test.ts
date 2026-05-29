@@ -96,4 +96,13 @@ describe("toRoman", () => {
   it('converts 3999 to "MMMCMXCIX"', () => {
     expect(toRoman(3999)).toBe('MMMCMXCIX');
   });
+
+  // Edge cases
+  it("should throw an error when input is 0", () => {
+    expect(() => toRoman(0)).toThrow()
+  });
+
+  it("should throw an error when input exceeds 3999", () => {
+    expect(() => toRoman(4000)).toThrow()
+  });
 });
