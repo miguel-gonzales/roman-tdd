@@ -109,4 +109,9 @@ describe("toRoman", () => {
   it("should throw an error when input is negative", () => {
     expect(() => toRoman(-1)).toThrow()
   });
+
+  it("should throw an error when input is a non-integer", () => {
+    expect(() => toRoman(3.5)).toThrow()
+    expect(() => toRoman("299")).toThrow()
+  });
 });
