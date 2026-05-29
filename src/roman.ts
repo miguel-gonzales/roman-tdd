@@ -1,3 +1,9 @@
+import {
+  assertValidRomanNumeral,
+  assertValidToRomanInput,
+  ROMAN_VALUES,
+} from "./romanValidators.js";
+
 export const toRoman = (value: number): string => {
   const romanNumbers: [number, string][] = [
     [1000, "M"],
@@ -14,17 +20,8 @@ export const toRoman = (value: number): string => {
     [4, "IV"],
     [1, "I"]
   ];
-  
-  // Validations
-  let num = typeof value === "string" ? Number(value) : value;
-  
-  if (!Number.isInteger(num)) {
-    throw new Error("Input must be an integer");
-  }
-  if (num <= 0 || num >= 4000) {
-    throw new Error("Input must be between 1 and 3999");
-  }
 
+  let num = assertValidToRomanInput(value);
 
   let result = "";
   for (const [value, numeral] of romanNumbers) {
@@ -37,38 +34,13 @@ export const toRoman = (value: number): string => {
 }
 
 export const fromRoman = (rNum: string): number => {
-  const values: Record<string, number> = {
-    I: 1,
-    V: 5,
-    X: 10,
-    L: 50,
-    C: 100,
-    D: 500,
-    M: 1000
-  };
-
-  // Validations
-  if (rNum.length === 0) {
-    throw new Error("Input cannot be empty, please provide a valid Roman numeral string");
-  }
-
-  if (rNum !== rNum.toUpperCase()) {
-    throw new Error("Input must contain only uppercase letters, please provide a valid Roman numeral string");
-  }
-
-  if (rNum.split("").some(char => !values[char])) {
-    throw new Error("Input contains invalid characters, please provide a valid Roman numeral string");
-  }
-
-  if (/I{4,}|X{4,}|C{4,}|M{4,}/.test(rNum)) {
-    throw new Error("Invalid Roman numeral: too many repetitions");
-  }
+  const normalized = assertValidRomanNumeral(rNum);
 
   let total = 0;
 
-  for (let i = 0; i < rNum.length; i++) {
-    const current = values[rNum.charAt(i)]!;
-    const next = values[rNum.charAt(i + 1)];
+  for (let i = 0; i < normalized.length; i++) {
+    const current = ROMAN_VALUES[normalized.charAt(i)]!;
+    const next = ROMAN_VALUES[normalized.charAt(i + 1)];
     if (next !== undefined && current < next) {
       total += next - current;
       i++;
@@ -76,6 +48,6 @@ export const fromRoman = (rNum: string): number => {
       total += current;
     }
   }
-  
+
   return total;
 };
