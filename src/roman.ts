@@ -67,9 +67,8 @@ export const fromRoman = (rNum: string): number => {
   let total = 0;
 
   for (let i = 0; i < rNum.length; i++) {
-    const current = values[rNum[i]];
-    const next = values[rNum[i + 1]]; // Minimal code without checking for undefined.
-
+    const current = values[rNum.charAt(i)]!;
+    const next = values[rNum.charAt(i + 1)];
     if (next !== undefined && current < next) {
       total += next - current;
       i++;
